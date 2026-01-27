@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>HaileyLanguageAI</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Audio</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.mpeg-4-audio</string>
+				<string>public.mp3</string>
+				<string>com.apple.m4a-audio</string>
+				<string>public.wav</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>需要語音辨識權限以將語音檔轉成文字。</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
+</dict>
+</plist>
