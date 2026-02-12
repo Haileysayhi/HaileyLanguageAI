@@ -66,19 +66,21 @@ final class TranscriptionViewModel: ObservableObject {
     }
 
     func requestAuthorizationIfNeeded() {
-        SFSpeechRecognizer.requestAuthorization { _ in }
+        SFSpeechRecognizer.requestAuthorization { status in
+            if status != .authorized {
+                print("語音辨識權限被拒絕")
+            }
+        }
     }
 
     func handleIncoming(url: URL) {
-        Task { @MainActor in
-            self.errorMessage = nil
-            self.detectedLocale = nil
-            let localURL = self.copyToTemporaryLocation(url: url)
-            if let localURL {
-                self.transcribeWithAutoDetect(at: localURL)
-            } else {
-                self.errorMessage = "無法讀取音訊檔案。"
-            }
+        self.errorMessage = nil
+        self.detectedLocale = nil
+        let localURL = self.copyToTemporaryLocation(url: url)
+        if let localURL {
+            self.transcribeWithAutoDetect(at: localURL)
+        } else {
+            self.errorMessage = "無法讀取音訊檔案。"
         }
     }
 
